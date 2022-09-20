@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7db94e9d2c2e82d4f9667004cf75c4c2
+guid: 0a679af3c0f231b4eb9c4d18c5d9149b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Boy Advance - Kingdom Hearts Chain of Memories - Traverse Town_0
+      name: Sora 2 Battle Idle
       rect:
         serializedVersion: 2
-        x: 29
-        y: 139
-        width: 348
-        height: 285
+        x: 7
+        y: 3392
+        width: 39
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 285e4d2b9db80c4409498f0cb3f9c2ca
-      internalID: 299132848
+      spriteID: d5b461221c142e34690a8387e58cd954
+      internalID: 534563816
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Game Boy Advance - Kingdom Hearts Chain of Memories - Traverse Town_0: 1985229082
+      Sora 2 Battle Idle: 534563816
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
