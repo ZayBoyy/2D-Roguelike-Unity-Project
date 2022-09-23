@@ -1,0 +1,17 @@
+We are using the Spiral Model in our project. 
+Something as complex as a Unity Game is going to be a large undertaking.
+We believe that, by using the Spiral, that we will be able to work much more quickly within each prototype.
+We already have an extremely rudimentary prototype.
+We are working to improve it with new features and fixes to old ones.
+
+Our current outline for the goals of each prototype is:
+1. Player Movement (current step)
+2. Terrain and Collision
+3. Room Traversal and Objective
+4. Enemy Creation
+5. Combat
+6. Polishing
+
+It is going to be a lot of work, planning and communication to achieve each prototype.
+These are all things the Spiral Model will help us to excel at.
+I hope that everything will go well, and we can work on small increments to make something enjoyable to play.
