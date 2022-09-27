@@ -1,0 +1,27 @@
+Mechanics: 
+
+Lightning: Linear attack with a stun effect
+
+Ice: Cone attack with a slow effect
+
+Fire: Radius attack with a knockback effect
+
+
+Free (8 directional?) movement.
+
+
+Same cooldown for both element switch and elemental attack
+
+Multi-element dragon final boss
+
+Wizard hat power up: ranged beam attacks
+
+Samurai Design
+
+Night time dungeon set design
+
+Preliminary tasks:
+
+Create environment
+Player mechanics
+Enemy mechanics
