@@ -35,7 +35,8 @@ public class Bandit : MonoBehaviour {
         }
 
         // -- Handle input and movement --
-        float inputX = Input.GetAxis("Horizontal");
+        float inputX = Input.GetAxisRaw("Horizontal");
+        //float inputY = Input.GetAxisRaw("Veritcal");
 
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
@@ -45,6 +46,7 @@ public class Bandit : MonoBehaviour {
 
         // Move
         m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+        
 
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
