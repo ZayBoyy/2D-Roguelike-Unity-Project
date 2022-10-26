@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627baeebece998543b8e711ac43a0dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 2
 --- !u!50 &26204836
 Rigidbody2D:
   serializedVersion: 4
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296205135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55aaf6f89b4eec847a8053a3c14c54c6, type: 3}
   m_Name: 
@@ -589,7 +589,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03988433, y: 0.59826136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -600,7 +600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.03}
+  m_Size: {x: 0.46311903, y: 1.2265229}
   m_EdgeRadius: 0
 --- !u!114 &538104563
 MonoBehaviour:
@@ -1105,5 +1105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8b435a8dc3f604e9a13c4acd7081c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 1
   m_jumpForce: 3
+  speed: 1
+  enemyT: {fileID: 1680349099}
+  player: {fileID: 26204834}
+  playerT: {fileID: 26204839}
+  distToPlayer: 0
+  airtime: 0
+  timeWatcher: 0

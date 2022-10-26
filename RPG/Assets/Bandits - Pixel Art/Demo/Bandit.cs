@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Bandit : MonoBehaviour {
 
-    [SerializeField] float      m_speed = 4.0f;
+    //[SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
+
+    public float speed = 1.0f;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -13,9 +15,24 @@ public class Bandit : MonoBehaviour {
     private bool                m_combatIdle = false;
     private bool                m_isDead = false;
 
+    public Transform enemyT;
+
+    public GameObject player;
+    public Transform playerT;
+   
+    public float distToPlayer;
+
+    public float airtime;
+    public float timeWatcher;
+
+    private Vector3 displacementToPlayer;
+
+     private Vector3 directionToPlayer; 
+
     // Use this for initialization
     void Start () {
         m_animator = GetComponent<Animator>();
+        airtime = 0;
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
     }
@@ -23,29 +40,45 @@ public class Bandit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State()) {
+        if (airtime >= 60 || airtime == 0) {
             m_grounded = true;
             m_animator.SetBool("Grounded", m_grounded);
+            m_body2d.velocity = new Vector2(m_body2d.velocity.x, 0);
+            airtime = 0;
         }
 
         //Check if character just started falling
-        if(m_grounded && !m_groundSensor.State()) {
+        if(airtime >= 30) {
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
+            m_body2d.velocity = new Vector2(m_body2d.velocity.x, -m_jumpForce);
+
         }
 
         // -- Handle input and movement --
-        float inputX = Input.GetAxisRaw("Horizontal");
-        //float inputY = Input.GetAxisRaw("Veritcal");
+        if (m_grounded == true) {
+        displacementToPlayer = playerT.position - enemyT.position;
+        distToPlayer = displacementToPlayer.magnitude;
+        directionToPlayer = displacementToPlayer / distToPlayer;
+        }
+
+        if (m_grounded == false) { 
+            for (; airtime < 60; airtime++) {
+            if (Time.deltaTime > timeWatcher){
+            timeWatcher = Time.deltaTime;
+            }
+            }
+        }
+
 
         // Swap direction of sprite depending on walk direction
-        if (inputX > 0)
+        if (playerT.position.x > 0)
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        else if (inputX < 0)
+        else if (playerT.position.x < 0)
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         // Move
-        m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+       // m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
         
 
         //Set AirSpeed in animator
@@ -85,8 +118,10 @@ public class Bandit : MonoBehaviour {
         }
 
         //Run
-        else if (Mathf.Abs(inputX) > Mathf.Epsilon)
+        else if (distToPlayer <= 2.5f) {
             m_animator.SetInteger("AnimState", 2);
+            enemyT.position += speed*directionToPlayer*Time.deltaTime;
+        }
 
         //Combat Idle
         else if (m_combatIdle)
