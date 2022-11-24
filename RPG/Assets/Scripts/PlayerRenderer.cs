@@ -17,6 +17,10 @@ public class PlayerRenderer : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public int getLast () {
+        return lastDirection;
+    }
+
    
     public void SetDirection(Vector2 direction)
     {
