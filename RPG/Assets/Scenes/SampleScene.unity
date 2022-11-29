@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 26204841}
   - component: {fileID: 26204842}
   m_Layer: 0
-  m_Name: Player?
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 1120153502}
   - component: {fileID: 1120153501}
   - component: {fileID: 1120153506}
+  - component: {fileID: 1120153507}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -780,14 +781,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120153499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.029, y: 0.045, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5044136, w: 0.8634622}
+  m_LocalPosition: {x: 0.151, y: 0.086, z: -0}
   m_LocalScale: {x: 0.023, y: 0.023, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 26204839}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60.585}
 --- !u!70 &1120153501
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -900,7 +901,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a285765008d8c42a40f9fe5df6715a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRender: {fileID: 26204840}
+  swingDuration: 0.2
+  target: {fileID: 26204834}
+  render: {fileID: 26204840}
+--- !u!114 &1120153507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120153499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63af5045626107d4cab19738c29a8cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1176983533
 GameObject:
   m_ObjectHideFlags: 0

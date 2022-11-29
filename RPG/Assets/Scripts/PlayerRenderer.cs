@@ -28,7 +28,7 @@ public class PlayerRenderer : MonoBehaviour
         //use run state as default
         string[] directionArray = null;
 
-       //measure the magnatude of the input (in case of joystick use)
+       //measure the magnitude of the input (in case of joystick use)
         if (direction.magnitude < .01f) 
         {
             //May as well be standing still with this level of input, so we'll use static states
@@ -71,5 +71,17 @@ public class PlayerRenderer : MonoBehaviour
         float stepCount = angle / step;
 
         return Mathf.FloorToInt(stepCount);
+    }
+
+    public void snapRight () {
+        Vector2 right = new Vector2(2, 0);
+            SetDirection(right);
+        
+    }
+
+    public void snapLeft () {
+        Vector2 left = new Vector2(-2, 0);
+            SetDirection(left);
+        
     }
 }
