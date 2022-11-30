@@ -341,7 +341,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129081057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -349,7 +349,7 @@ Transform:
   - {fileID: 1936750910}
   - {fileID: 1176983534}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296205135
 GameObject:
@@ -361,9 +361,9 @@ GameObject:
   m_Component:
   - component: {fileID: 296205138}
   - component: {fileID: 296205137}
-  - component: {fileID: 296205139}
   - component: {fileID: 296205140}
   - component: {fileID: 296205141}
+  - component: {fileID: 296205142}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -430,35 +430,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296205135}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.4067857, y: 0.26, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &296205139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296205135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e9b2f01207f20041b254b5f73dd3c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  enemyT: {fileID: 0}
-  pos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
-  playerT: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
-  distToPlayer: 0
-  projectile: {fileID: 2408860811266627272, guid: 5f7d2b9a457edac449c1908eca746c45, type: 3}
-  projTimer: 1.5
 --- !u!61 &296205140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,6 +485,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &296205142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296205135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9b2f01207f20041b254b5f73dd3c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  enemyT: {fileID: 296205138}
+  pos: {x: 0, y: 0, z: 0}
+  player: {fileID: 26204834}
+  playerT: {fileID: 26204839}
+  playerPos: {x: 0, y: 0, z: 0}
+  distToPlayer: 0
+  projectile: {fileID: 2408860811266627272, guid: 5f7d2b9a457edac449c1908eca746c45, type: 3}
+  projTimer: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,9 +583,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.86, y: 0.68, z: -1}
-  m_LocalScale: {x: 1.020625, y: 1, z: 1}
+  m_LocalScale: {x: 1.0206249, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -954,7 +954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swingDuration: 0.2
   target: {fileID: 26204834}
-  render: {fileID: 26204840}
+  swordRender: {fileID: 1120153505}
+  playerRender: {fileID: 26204840}
 --- !u!114 &1120153507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2553,7 @@ GameObject:
   - component: {fileID: 1680349097}
   - component: {fileID: 1680349096}
   - component: {fileID: 1680349101}
+  - component: {fileID: 1680349102}
   m_Layer: 0
   m_Name: HeavyBandit
   m_TagString: Untagged
@@ -2690,6 +2692,27 @@ MonoBehaviour:
   distToPlayer: 0
   airtime: 0
   timeWatcher: 0
+--- !u!114 &1680349102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680349095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9b2f01207f20041b254b5f73dd3c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  enemyT: {fileID: 296205138}
+  pos: {x: 0, y: 0, z: 0}
+  player: {fileID: 26204834}
+  playerT: {fileID: 26204839}
+  playerPos: {x: 0, y: 0, z: 0}
+  distToPlayer: 0
+  projectile: {fileID: 2408860811266627272, guid: 5f7d2b9a457edac449c1908eca746c45, type: 3}
+  projTimer: 1.5
 --- !u!1 &1936750909
 GameObject:
   m_ObjectHideFlags: 0
