@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
     public float regenTimer = 0f;
 
+    public GameObject healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
                 regenTimer -= Time.deltaTime;
             }
         }
+
+        healthBar.transform.localScale = new Vector3(Mathf.Clamp(0.3f*health/100f, 0, 100), 0.05f, 1f);
     }
 
     public void damage(int x){
