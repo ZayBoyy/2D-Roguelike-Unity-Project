@@ -22,7 +22,7 @@ public class ChaseAI : MonoBehaviour
         enemyT = GetComponent<Transform>();
         pos = enemyT.position;
 
-        player = GameObject.Find("Player?");
+        player = GameObject.Find("Player");
         playerT = player.transform;
         playerPos = playerT.position;
     }

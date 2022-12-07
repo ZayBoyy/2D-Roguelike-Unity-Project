@@ -957,7 +957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120153499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.086, z: 0}
+  m_LocalPosition: {x: 0.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1033,8 +1033,6 @@ MonoBehaviour:
   pRender: {fileID: 26204840}
   sRender: {fileID: 1120153505}
   anime: {fileID: 1120153508}
-  swordL: {fileID: 969480010}
-  swordR: {fileID: 434650090}
 --- !u!114 &1120153507
 MonoBehaviour:
   m_ObjectHideFlags: 0
