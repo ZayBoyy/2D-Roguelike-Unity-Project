@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerRenderer : MonoBehaviour
 {
 
-    public static readonly string[] staticDirections = {"Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE"};
-    public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
+    public static readonly string[] staticDirections = {"Player Static Up", "Player Static Left", "Player Static Left", "Player Static Left", "Player Static Down", "Player Static Right", "Player Static Right", "Player Static Right"};
+    public static readonly string[] runDirections = {"Player Run Left", "Player Run Left", "Player Run Left", "Player Run Left", "Player Run Right", "Player Run Right", "Player Run Right", "Player Run Right"};
 
     Animator animator;
     int lastDirection;
@@ -34,13 +34,20 @@ public class PlayerRenderer : MonoBehaviour
             //May as well be standing still with this level of input, so we'll use static states
             directionArray = staticDirections;
         }
-        else 
+        else
         {
             //determine which direction we're going
             //use DirectionToIndex to get the index of the slice from the direction vector (I don't get it either)
             //save it to lastDirection
             directionArray = runDirections;
+            
+            if (DirectionToIndex(direction, 8) == 0 || DirectionToIndex(direction, 8) == 4) {
+                
+            }
+            else {
             lastDirection = DirectionToIndex(direction, 8);
+            }
+        
         }
         
         animator.Play(directionArray[lastDirection]);
@@ -73,15 +80,5 @@ public class PlayerRenderer : MonoBehaviour
         return Mathf.FloorToInt(stepCount);
     }
 
-    public void snapRight () {
-        Vector2 right = new Vector2(2, 0);
-            SetDirection(right);
-        
-    }
 
-    public void snapLeft () {
-        Vector2 left = new Vector2(-2, 0);
-            SetDirection(left);
-        
-    }
 }
