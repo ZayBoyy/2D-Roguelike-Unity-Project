@@ -25,4 +25,12 @@ public class ProjectileAI : MonoBehaviour
             Destroy(transform.root.gameObject);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.name == "Player"){
+            other.GetComponent<PlayerHealth>().damage(15);
+            Destroy(transform.root.gameObject);    
+        }
+        
+    }
 }

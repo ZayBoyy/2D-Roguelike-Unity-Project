@@ -10,8 +10,16 @@ public class SwordRotation : MonoBehaviour
     public PlayerRenderer pRender;
     public SpriteRenderer sRender;
     public Animator anime;
+
+    public BoxCollider2D hitbox;
+    public float hitboxTimer = .75f;
    
     string dir;
+
+    void Start(){
+        hitbox = GetComponent<BoxCollider2D>();
+        hitbox.enabled = false;
+    }
 
     void Update() {
 
@@ -32,7 +40,15 @@ public class SwordRotation : MonoBehaviour
 
     if (Input.GetMouseButtonDown(0)) { 
         swinging = true;
-        
+        hitbox.enabled = true;   
+    }
+
+    if(hitbox.enabled == true){
+        hitboxTimer -= Time.deltaTime;
+        if(hitboxTimer <= 0f){
+            hitboxTimer = 0.75f;
+            hitbox.enabled = false;
+        }
     }
     
     while (swinging == true) {
