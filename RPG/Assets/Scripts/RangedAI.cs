@@ -27,7 +27,7 @@ public class RangedAI : MonoBehaviour
         enemyT = GetComponent<Transform>();
         pos = enemyT.position;
 
-        player = GameObject.Find("Player?");
+        player = GameObject.Find("Player");
         playerT = player.transform;
         playerPos = playerT.position;
     }

@@ -31,7 +31,7 @@ void Start () {
 void Update () {
 
     
-
+    if(!PauseMenu.isPaused) {
     if (!swinging) {
 
         startRot = transform.eulerAngles;
@@ -101,5 +101,6 @@ void Update () {
             swinging = false;
         }
     }   
+    }
   }
 } 
