@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
@@ -19,6 +21,9 @@ public class Game : MonoBehaviour
 
     public float spawnCD = 1.0f;
     private int i = 0;
+
+    public TextMeshProUGUI roundText;
+    public int roundNum = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +51,8 @@ public class Game : MonoBehaviour
             i = 0;
             enemyCount +=2;
             spawnCD = 3.0f;
+            roundNum++;
+            roundText.text = String.Format("Round {0}", roundNum);
         }
 
         for(int j = enemies.Count - 1; j>=0; j--){

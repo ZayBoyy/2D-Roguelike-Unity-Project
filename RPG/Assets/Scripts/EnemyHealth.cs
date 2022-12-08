@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,10 +11,14 @@ public class EnemyHealth : MonoBehaviour
     public bool immune = false;
     public float iframes = 0.5f;
 
+
+    public TextMeshProUGUI enemiesText;
+    public static int enemiesKilled = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemiesText = GameObject.Find("Enemy Tracker").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -27,6 +33,8 @@ public class EnemyHealth : MonoBehaviour
         }
 
         if(health <= 0){
+            enemiesKilled++;
+            enemiesText.text = String.Format("Enemies Killed: {0}", enemiesKilled);
             Destroy(transform.root.gameObject); 
         }
     }
