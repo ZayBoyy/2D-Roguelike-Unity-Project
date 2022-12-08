@@ -12,28 +12,30 @@ public class SwordRotation : MonoBehaviour
     public Animator anime;
 
     public BoxCollider2D hitbox;
-    public float hitboxTimer = .75f;
+    public float hitboxTimer;
+    public float cooldown = .75f;
    
     string dir;
+    string dirS;
 
     void Start(){
         hitbox = GetComponent<BoxCollider2D>();
         hitbox.enabled = false;
+        hitboxTimer = cooldown;
     }
 
     void Update() {
 
-        
-
     if  (pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Static Left") || pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Run Left")) {
              
             dir = "Swing Animation";
+            dirS = "Sword Idle";
     }
 
     if  (pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Static Right") || pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Run Right")) {
            
-               
-            dir = "Swing Animation Right";
+            dir = "Swing Animation Right"; 
+            dirS = "Sword Idle Right";
             
     }
 
@@ -43,20 +45,31 @@ public class SwordRotation : MonoBehaviour
     }
 
     if(hitbox.enabled == true){
-        hitboxTimer -= Time.deltaTime;
-        if(hitboxTimer <= 0f){
-            hitboxTimer = 0.75f;
+        this.cooldown -= Time.deltaTime;
+        if(cooldown <= 0f){
+            cooldown = hitboxTimer;
             hitbox.enabled = false;
         }
+    }
+
+    if (swinging == false) {
+        anime.Play(dirS);
     }
     
     while (swinging == true) {
 
-       
         anime.Play(dir);
-        swinging = false;
+
+        if (!anime.GetCurrentAnimatorStateInfo(0).IsName(dir)) {
+            swinging = false;
+        }
     }
- }
+}
+
+   
 
 
 }
+
+
+
