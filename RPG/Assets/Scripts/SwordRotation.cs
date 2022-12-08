@@ -61,12 +61,18 @@ public class SwordRotation : MonoBehaviour
     while (swinging == true) {
 
         anime.Play(dir);
+        hitbox.enabled = true;
 
-        while (animate.IsPlaying("Swing Animation") || animate.IsPlaying("Swing Animation Right")) {
-    
-        }
+        if (!animate.IsPlaying(dir)) {
+        hitbox.enabled = false;
         swinging = false;
+        }
     }
+ if (Input.GetMouseButtonDown(1)) { 
+        swinging = false;
+        hitbox.enabled = false;   
+    }
+
 }
 
    
