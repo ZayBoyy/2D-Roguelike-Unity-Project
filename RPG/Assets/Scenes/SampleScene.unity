@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627baeebece998543b8e711ac43a0dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 3
 --- !u!50 &26204836
 Rigidbody2D:
   serializedVersion: 4
@@ -2050,6 +2050,7 @@ MonoBehaviour:
   anime: {fileID: 1120153508}
   hitbox: {fileID: 1120153509}
   hitboxTimer: 0.75
+  cooldown: 0.75
 --- !u!114 &1120153507
 MonoBehaviour:
   m_ObjectHideFlags: 0

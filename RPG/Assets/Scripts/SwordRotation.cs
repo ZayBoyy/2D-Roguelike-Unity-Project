@@ -26,6 +26,8 @@ public class SwordRotation : MonoBehaviour
 
     void Update() {
 
+        Animation animate = anime.GetComponent<Animation>();
+
     if  (pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Static Left") || pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Run Left")) {
              
             dir = "Swing Animation";
@@ -60,9 +62,10 @@ public class SwordRotation : MonoBehaviour
 
         anime.Play(dir);
 
-        if (!anime.GetCurrentAnimatorStateInfo(0).IsName(dir)) {
-            swinging = false;
+        while (animate.IsPlaying("Swing Animation") || animate.IsPlaying("Swing Animation Right")) {
+    
         }
+        swinging = false;
     }
 }
 
