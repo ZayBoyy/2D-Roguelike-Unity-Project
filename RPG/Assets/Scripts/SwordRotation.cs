@@ -7,7 +7,7 @@ public class SwordRotation : MonoBehaviour
 {
 
     bool swinging;
-    public PlayerRenderer pRender;
+    public Animator pRender;
     public SpriteRenderer sRender;
     public Animator anime;
 
@@ -23,17 +23,16 @@ public class SwordRotation : MonoBehaviour
 
     void Update() {
 
-    if  (pRender.getLast() <= 3) {
+        
+
+    if  (pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Static Left") || pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Run Left")) {
              
-            sRender.flipX = true;
-            sRender.transform.position = new Vector3(-0.16f, 0f, 0f);
             dir = "Swing Animation";
     }
 
-    if  (pRender.getLast() >= 4 ) {
+    if  (pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Static Right") || pRender.GetCurrentAnimatorStateInfo(0).IsName("Player Run Right")) {
            
-            sRender.flipX = false;    
-            sRender.transform.position = new Vector3(0.16f, 0f, 0f);  
+               
             dir = "Swing Animation Right";
             
     }
