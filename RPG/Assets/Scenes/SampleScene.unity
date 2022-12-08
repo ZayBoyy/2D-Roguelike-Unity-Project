@@ -348,11 +348,7 @@ MonoBehaviour:
   health: 100
   timeSinceLastDamage: 0
   regenTimer: 0
-<<<<<<< Updated upstream
-  healthBar: {fileID: 0}
-=======
   healthBar: {fileID: 26204834}
->>>>>>> Stashed changes
 --- !u!1 &129081057
 GameObject:
   m_ObjectHideFlags: 0
