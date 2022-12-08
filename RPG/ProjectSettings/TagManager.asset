@@ -42,15 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ground
+    uniqueID: 2582343851
+    locked: 0
+  - name: wall
+    uniqueID: 2943025781
+    locked: 0
   - name: object
     uniqueID: 3465458483
     locked: 0
   - name: object 2
     uniqueID: 3025262833
-    locked: 0
-  - name: wall
-    uniqueID: 2943025781
-    locked: 0
-  - name: ground
-    uniqueID: 2582343851
     locked: 0
